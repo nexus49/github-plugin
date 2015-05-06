@@ -254,7 +254,7 @@ public class GitHubPushTrigger extends Trigger<AbstractProject<?,?>> implements 
 
         @Override
         public boolean isApplicable(Item item) {
-            return item instanceof AbstractProject;
+            return item instanceof AbstractProject || item.getClass().getName().equals("org.jenkinsci.plugins.workflow.job.WorkflowJob");
         }
 
         @Override
